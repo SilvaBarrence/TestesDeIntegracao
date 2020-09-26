@@ -53,12 +53,12 @@ public class LeilaoDao {
 				.setParameter("fim", fim)
 				.list();
 	}
-	
+
 	@SuppressWarnings("unchecked")
 	public List<Leilao> disputadosEntre(double inicio, double fim) {
 		return session.createQuery("from Leilao l where l.valorInicial " +
 				"between :inicio and :fim and l.encerrado = false " +
-				"and size(l.lances) > 3")
+				"and size(l.lances) >= 3")
 				.setParameter("inicio", inicio)
 				.setParameter("fim", fim)
 				.list();

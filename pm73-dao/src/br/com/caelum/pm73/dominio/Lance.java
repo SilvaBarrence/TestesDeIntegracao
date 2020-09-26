@@ -18,8 +18,8 @@ public class Lance {
 	private Usuario usuario;
 	@ManyToOne
 	private Leilao leilao;
-	
-	protected Lance() {}
+
+	public Lance(Calendar data, Usuario usuario, double valor) {}
 	public Lance(Calendar data, Usuario usuario, double valor, Leilao leilao) {
 		this.usuario = usuario;
 		this.data = data;
